@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VS Code Extensions Recommendations</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    }
+    window.onload = function() {
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    }
+    // Copy list
+    function copyList(category) {
+      const lists = {
+        beginner: [
+          'Prettier', 'ESLint', 'GitLens', 'VSCode Icons', 'Bracket Pair Colorizer 2', 'Path Intellisense', 'Auto Rename Tag', 'Live Server', 'IntelliCode', 'Thunder Client', 'REST Client', 'Markdown All in One', 'Settings Sync', 'Tailwind CSS IntelliSense', 'Jest', 'Code Spell Checker', 'Tabnine'
+        ],
+        pro: [
+          'Docker', 'GitHub Copilot', 'Debugger for Chrome', 'Project Manager', 'Import Cost', 'Playwright Test for VSCode', 'Remote - SSH', 'Remote - Containers', 'Remote - WSL', 'NPM Intellisense', 'EditorConfig for VS Code', 'Peacock'
+        ]
+      };
+      navigator.clipboard.writeText(lists[category].join(', '));
+      alert('Copied to clipboard!');
+    }
+  </script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #e0e7ef 0%, #f1f5f9 100%);
+      min-height: 100vh;
+    }
+    .emoji-animate {
+      display: inline-block;
+      animation: bounce 1.5s infinite alternate;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-6px) scale(1.08); }
+    }
+    @media (max-width: 640px) {
+      .max-w-2xl { max-width: 100% !important; }
+      .p-8 { padding: 1.25rem !important; }
+      .py-10 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+      .text-lg { font-size: 1rem !important; }
+    }
+    .dark body {
+      background: linear-gradient(135deg, #18181b 0%, #312e81 100%);
+    }
+    .dark .bg-white\/90 {
+      background-color: rgba(30, 41, 59, 0.95) !important;
+      color: #f1f5f9 !important;
+    }
+    .dark .text-blue-900, .dark .text-blue-800 {
+      color: #a5b4fc !important;
+    }
+    .dark .text-gray-600 {
+      color: #d1d5db !important;
+    }
+    .dark .text-purple-700 {
+      color: #c4b5fd !important;
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans bg-gradient-to-br from-blue-50 to-blue-100 dark:from-slate-900 dark:to-slate-800">
+  <div class="w-full min-h-screen flex flex-col items-center justify-center px-2 sm:px-0">
+    <main class="w-full max-w-2xl bg-white/95 dark:bg-slate-800 rounded-2xl shadow-2xl p-2 sm:p-6 mt-4 mb-4 flex flex-col focus:outline-none" tabindex="0" aria-label="VS Code Extensions Recommendations">
+      <header class="flex flex-col sm:flex-row justify-between items-center gap-2 mb-4 w-full">
+        <button onclick="toggleDarkMode()" aria-label="Toggle dark mode" class="w-full sm:w-auto px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100 font-semibold shadow hover:bg-blue-200 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 transition mb-2 sm:mb-0">Toggle Dark Mode</button>
+        <nav class="flex w-full sm:w-auto gap-2" aria-label="Extension Category Tabs">
+          <button id="tab-beginner" onclick="showTab('beginner')" aria-controls="beginner-list" aria-selected="true" class="flex-1 sm:flex-none px-4 py-2 rounded-t-lg bg-blue-200 dark:bg-blue-800 text-blue-900 dark:text-blue-100 font-semibold shadow focus:outline-none focus:ring-2 focus:ring-blue-400 transition">Beginner</button>
+          <button id="tab-pro" onclick="showTab('pro')" aria-controls="pro-list" aria-selected="false" class="flex-1 sm:flex-none px-4 py-2 rounded-t-lg bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100 font-semibold shadow focus:outline-none focus:ring-2 focus:ring-blue-400 transition">Pro</button>
+        </nav>
+      </header>
+      <section id="beginner-list">
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-2 gap-2 w-full">
+          <h1 class="text-2xl font-bold text-blue-900 dark:text-blue-200 text-center flex-1 flex items-center gap-2"><span class="emoji-animate" aria-hidden="true">🔌</span> <span>Recommended VS Code Extensions for Beginners</span></h1>
+          <button onclick="copyList('beginner')" aria-label="Copy beginner extension list" class="w-full sm:w-auto ml-0 sm:ml-2 px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100 font-semibold shadow hover:bg-blue-200 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">Copy List</button>
+        </div>
+        <ul class="space-y-3 text-base sm:text-lg" role="list">
+          <li>✨ <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Prettier</a> – Code formatter for consistent style <span class="text-xs text-gray-500">⭐ 17M+ downloads</span></li>
+          <li>🧹 <a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">ESLint</a> – Find and fix JavaScript/TypeScript issues <span class="text-xs text-gray-500">⭐ 25M+ downloads</span></li>
+          <li>🔍 <a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">GitLens</a> – Supercharge your Git workflow <span class="text-xs text-gray-500">⭐ 18M+ downloads</span></li>
+          <li>🎨 <a href="https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">VSCode Icons</a> – Beautiful file icons for navigation <span class="text-xs text-gray-500">⭐ 13M+ downloads</span></li>
+          <li>🌈 <a href="https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Bracket Pair Colorizer 2</a> – Color matching brackets <span class="text-xs text-gray-500">⭐ 6M+ downloads</span></li>
+          <li>🛣️ <a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Path Intellisense</a> – Autocomplete filenames/paths <span class="text-xs text-gray-500">⭐ 8M+ downloads</span></li>
+          <li>🔄 <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Auto Rename Tag</a> – Auto-rename paired HTML/XML tags <span class="text-xs text-gray-500">⭐ 7M+ downloads</span></li>
+          <li>🚀 <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Live Server</a> – Launch a local dev server with live reload <span class="text-xs text-gray-500">⭐ 20M+ downloads</span></li>
+          <li>🤖 <a href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">IntelliCode</a> – AI-assisted code completions <span class="text-xs text-gray-500">⭐ 13M+ downloads</span></li>
+          <li>⚡ <a href="https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Thunder Client</a> or <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">REST Client</a> – Test APIs easily <span class="text-xs text-gray-500">⭐ 3M+ downloads</span></li>
+          <li>📝 <a href="https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Markdown All in One</a> – Enhanced Markdown editing <span class="text-xs text-gray-500">⭐ 6M+ downloads</span></li>
+          <li>🔒 <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Settings Sync</a> – Sync your VS Code settings across devices <span class="text-xs text-gray-500">⭐ 4M+ downloads</span></li>
+          <li>🧩 <a href="https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Tailwind CSS IntelliSense</a> – Autocomplete and linting for Tailwind CSS <span class="text-xs text-gray-500">⭐ 5M+ downloads</span></li>
+          <li>🧪 <a href="https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Jest</a> – Testing support for JavaScript/TypeScript <span class="text-xs text-gray-500">⭐ 2M+ downloads</span></li>
+          <li>🧰 <a href="https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Code Spell Checker</a> – Catch common spelling errors <span class="text-xs text-gray-500">⭐ 7M+ downloads</span></li>
+          <li>🧑‍💻 <a href="https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Tabnine</a> – AI code completions (optional) <span class="text-xs text-gray-500">⭐ 5M+ downloads</span></li>
+        </ul>
+      </section>
+      <section id="pro-list" style="display:none;">
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-2 gap-2 w-full">
+          <h2 class="text-xl font-semibold text-blue-800 dark:text-blue-200 text-center flex-1 flex items-center gap-2"><span class="emoji-animate" aria-hidden="true">💼</span> <span>Recommended Extensions for Pros</span></h2>
+          <button onclick="copyList('pro')" aria-label="Copy pro extension list" class="w-full sm:w-auto ml-0 sm:ml-2 px-4 py-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100 font-semibold shadow hover:bg-blue-200 dark:hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-400 transition">Copy List</button>
+        </div>
+        <ul class="space-y-3 text-base sm:text-lg" role="list">
+          <li>🦾 <a href="https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Docker</a> – Manage Docker containers and images <span class="text-xs text-gray-500">⭐ 18M+ downloads</span></li>
+          <li>🧬 <a href="https://marketplace.visualstudio.com/items?itemName=GitHub.copilot" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">GitHub Copilot</a> – AI pair programmer for code suggestions <span class="text-xs text-gray-500">⭐ 10M+ downloads</span></li>
+          <li>🧑‍🔬 <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Debugger for Chrome</a> – Debug JavaScript code in Chrome <span class="text-xs text-gray-500">⭐ 6M+ downloads</span></li>
+          <li>🗂️ <a href="https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Project Manager</a> – Easily switch between projects <span class="text-xs text-gray-500">⭐ 4M+ downloads</span></li>
+          <li>🧩 <a href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Import Cost</a> – Display import sizes in your code <span class="text-xs text-gray-500">⭐ 2M+ downloads</span></li>
+          <li>🧪 <a href="https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Playwright Test for VSCode</a> – End-to-end testing support <span class="text-xs text-gray-500">⭐ 1M+ downloads</span></li>
+          <li>🧑‍💻 <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Remote - SSH</a> – Work with remote servers directly in VS Code <span class="text-xs text-gray-500">⭐ 8M+ downloads</span></li>
+          <li>🧑‍💻 <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Remote - Containers</a> – Develop inside Docker containers <span class="text-xs text-gray-500">⭐ 5M+ downloads</span></li>
+          <li>🧑‍💻 <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Remote - WSL</a> – Use Windows Subsystem for Linux as your dev environment <span class="text-xs text-gray-500">⭐ 7M+ downloads</span></li>
+          <li>📦 <a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">NPM Intellisense</a> – Autocomplete npm modules in import statements <span class="text-xs text-gray-500">⭐ 2M+ downloads</span></li>
+          <li>🧹 <a href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">EditorConfig for VS Code</a> – Maintain consistent coding styles <span class="text-xs text-gray-500">⭐ 6M+ downloads</span></li>
+          <li>🧑‍💻 <a href="https://marketplace.visualstudio.com/items?itemName=JohnPapa.vscode-peacock" target="_blank" class="font-bold underline text-blue-700 dark:text-blue-300 hover:text-blue-900">Peacock</a> – Change the color of your workspace for easier context switching <span class="text-xs text-gray-500">⭐ 2M+ downloads</span></li>
+        </ul>
+      </section>
+      <footer class="mt-8 text-center text-gray-600 text-sm dark:text-gray-300">
+        <p>Tip: You can install these extensions from the VS Code Marketplace for a better coding experience! 🚀</p>
+        <p class="mt-4 text-purple-700 dark:text-purple-300 font-semibold">Fun Fact: Did you know Visual Studio Code was first released by Microsoft in 2015 and is now one of the most popular code editors in the world? 🌍💻</p>
+      </footer>
+    </main>
+  </div>
+  <script>
+    function showTab(tab) {
+      document.getElementById('beginner-list').style.display = tab === 'beginner' ? '' : 'none';
+      document.getElementById('pro-list').style.display = tab === 'pro' ? '' : 'none';
+      document.getElementById('tab-beginner').classList.toggle('bg-blue-200', tab === 'beginner');
+      document.getElementById('tab-beginner').classList.toggle('bg-blue-100', tab !== 'beginner');
+      document.getElementById('tab-pro').classList.toggle('bg-blue-200', tab === 'pro');
+      document.getElementById('tab-pro').classList.toggle('bg-blue-100', tab !== 'pro');
+    }
+    // Set default tab
+    showTab('beginner');
+  </script>
+</body>
+</html>
